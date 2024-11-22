@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "/stylesheets/Cadastro.css">
+    <title> Formulario de cadastro </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src= "/images/undraw_shopping_re_hdd9.svg">
+        </div>
+         <div class ="form">
+            <form action="#">
+               <div class = "form-header">
+                    <div class="title">
+                         <h1>Cadastre-se</h1>
+                    </div>
+                <div class ="login-button">
+                    <button onclick="location.href='telainicial.html'" class="login-button-text">Entrar</button>
+
+                    </div>
+                </div>
+                <div class="input-group">
+                    <!--NOME-->
+                    <div class = "input-box">
+                    <label for="firstname">Primeiro nome</label>
+                    <input id= "firstname" type ="text" name="firstname" placeholder="Digite o seu primeiro nome" required>
+                    </div>
+                    <!--SOBRENOME-->
+                    <div class = "input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id= "lastname" type ="text" name="lastname" placeholder="Digite o seu sobrenome" required>
+                        </div>
+                    <!--EMAIL-->
+                        <div class = "input-box">
+                            <label for="Email">Email</label>
+                            <input id= "Email" type ="text" name="Email" placeholder="Digite o seu email" required>
+                            </div>
+                    <!--NUMERO-->
+                        <div class = "input-box">
+                            <label for="Number">Numero</label>
+                            <input id= "Number" type ="text" name="Number" placeholder="Digite o seu numero" required>
+                            </div>
+                    <!--SENHA-->
+                        <div class = "input-box">
+                            <label for="password">Senha</label>
+                            <input id= "password" type ="text" name="password" placeholder="Digite sua  senha" required>
+                            </div>
+                    <!--CONFIRMAR SENHA-->
+                    <div class = "input-box">
+                            <label for="password">Confirme sua senha</label>
+                            <input id= "Confirmpassword" type ="text" name="Confirmpassword" placeholder="Confirme sua  senha" required>
+                            </div>
+                </div>
+                <!--Botão cadastrar-->
+                <div class="continue-button">
+                    <button><a href="#">Continuar</a></button>
+
+                </div>
+            </form>
+         </div>
+    </div>
+</body>
+</html>

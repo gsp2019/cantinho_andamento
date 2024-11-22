@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Pedido - Cantinho do Sabor</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <script src="/javascripts/color-modes.js"></script>
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #8b0000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-top: 3rem;
+        }
+
+        .btn-checkout {
+            background-color: #8b0000;
+            color: white;
+            font-size: 1.3rem;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-checkout:hover {
+            background-color: #b22222;
+        }
+
+        .confirmation-box {
+            display: none;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            border-radius: 5px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Cantinho do Sabor</h1>
+        <h2>Sabor & Tradição</h2>
+    </header>
+
+    <!-- Formulário de Pedido -->
+    <div class="container">
+        <h3 class="text-center">Escolha seu Pedido</h3>
+        <!-- Aqui são os itens do pedido -->
+        <div>
+            <div class="order-item">
+                <span>Feijoada</span>
+                <input type="number" id="feijoada-quantidade" value="0" min="0">
+            </div>
+            <div class="order-item">
+                <span>Bife Acebolado</span>
+                <input type="number" id="bife-quantidade" value="0" min="0">
+            </div>
+            <div class="order-item">
+                <span>Moqueca de Peixe</span>
+                <input type="number" id="moqueca-quantidade" value="0" min="0">
+            </div>
+        </div>
+
+        <!-- Botão Finalizar Pedido -->
+        <button class="btn-checkout" onclick="showConfirmation()">Finalizar pedido</button>
+
+        <!-- Tela de Confirmação do Pedido -->
+        <div class="confirmation-box" id="confirmationBox">
+            <h4 class="text-center">Confirmação de Pedido</h4>
+            <div id="pedidoResumo">
+                <!-- Itens do Pedido Serão Carregados Aqui -->
+            </div>
+            <button class="btn btn-success" onclick="finalizarPedido()">Confirmar e Finalizar</button>
+            <button class="btn btn-secondary" onclick="hideConfirmation()">Alterar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cantinho do Sabor | Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+    <script>
+        // Função para exibir a tela de confirmação do pedido
+        function finalizarPedido() {
+            // Pega os valores das quantidades dos itens
+            const feijoadaQty = document.getElementById('feijoada-quantidade').value;
+            const bifeQty = document.getElementById('bife-quantidade').value;
+            const moquecaQty = document.getElementById('moqueca-quantidade').value;
+
+            // Calculando o preço total (preços fictícios)
+            const feijoadaPrice = 45.00;
+            const bifePrice = 39.90;
+            const moquecaPrice = 59.90;
+
+            // Calculando o total
+            let total = (feijoadaQty * feijoadaPrice) + (bifeQty * bifePrice) + (moquecaQty * moquecaPrice);
+
+            // Preenche o resumo do pedido
+            let pedidoResumo = `
+                <div class="order-item">
+                    <span>Feijoada</span>
+                    <span>Quantidade: ${feijoadaQty}</span>
+                    <span>R$ ${(feijoadaQty * feijoadaPrice).toFixed(2)}</span>
+                </div>
+                <div class="order-item">
+                    <span>Bife Acebolado</span>
+                    <span>Quantidade: ${bifeQty}</span>
+                    <span>R$ ${(bifeQty * bifePrice).toFixed(2)}</span>
+                </div>
+                <div class="order-item">
+                    <span>Moqueca de Peixe</span>
+                    <span>Quantidade: ${moquecaQty}</span>
+                    <span>R$ ${(moquecaQty * moquecaPrice).toFixed(2)}</span>
+                </div>
+                <div class="order-item">
+                    <span>Total</span>
+                    <span></span>
+                    <span>R$ ${total.toFixed(2)}</span>
+                </div>
+            `;
+
+            // Insere o resumo na tela de confirmação
+            document.getElementById('pedidoResumo').innerHTML = pedidoResumo;
+
+            // Exibe a tela de confirmação
+            document.getElementById('confirmationBox').style.display = 'block';
+        }
+
+        // Função para esconder a tela de confirmação
+        window.location.href = "/checkout.ejs"; // Redireciona para a página de pagamento
+
+    </script>
+
+    <script src="/javascripts/bootstrap.bundle.min.js"></script>
+</html>
