@@ -43,3 +43,11 @@ Interface visual desenvolvida com HTML, CSS e Bootstrap para renderizar os dados
 
 ### Controller:
 Implementação de lógica em JavaScript para manipular interações do usuário, como validação de formulários, navegação e chamadas dinâmicas.
+
+
+## Imagens do site funcional 
+![image](https://github.com/user-attachments/assets/2cd4b397-aec5-48bf-8af9-667e988e8920) - Tela para agendar reservas .
+![image](https://github.com/user-attachments/assets/10dd0e6c-f27f-40b5-83d9-b8fbbd1ffdf0) - Tela de dashboard .
+![image](https://github.com/user-attachments/assets/4ad50d48-d273-40bc-abc2-cf5b76a4873e) - Tela de cardápio . 
+
+
