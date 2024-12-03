@@ -30,14 +30,13 @@ Este projeto foi elaborado com base em um restaurante ficticio , desenvolvido co
 1-Crie uma nova pasta em seu dispositivo e abra a mesma no Vs Code  
 2-Abra o terminal e digite : git clone "https://github.com/gsp2019/cantinho_andamento.git"  
 3- Verifique se o npm esta intalado ,utilizando a tag npn -v, caso o mesmo não esteja sera necessario intala-lo.  
-
+4- Para acessar a area de adm é necessario digitar a senha : 1234
 ## Estrutura MVC  
 O projeto foi organizado seguindo o padrão MVC (Model-View-Controller),esta abordagem facilita a manutenção e a escalabilidade do projeto, permitindo futuras integrações, como uma API para gerenciamento de reservas em tempo real,
  a lógica é separada em três camadas principais:  
 
 ### Model:
-Gerenciamento dos dados e estrutura do conteúdo, como informações de pratos e reservas.  
-
+Gerenciamento dos dados e estrutura do conteúdo, como informações de pratos e reservas. 
 ### View:
 Interface visual desenvolvida com HTML, CSS e Bootstrap para renderizar os dados de forma atraente e acessível.  
 
